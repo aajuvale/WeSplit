@@ -8,35 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // @ State allows tapCount to be updated like a mutating function would be able to
+    @State
+    private var tapCount = 0
+    
     var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                }
-                
-                Section {
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                }
-                
-                Section {
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
-                }
-            }
+        Button("Tap Count: \(tapCount) ") {
+            tapCount += 1
         }
-        .navigationTitle("SwiftUI")
-        .navigationBarTitleDisplayMode(.large)
-        
+    
     }
 }
 
