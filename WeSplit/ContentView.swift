@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // @ State allows tapCount to be updated like a mutating function would be able to
+    // SwiftUI needs to be able to read and write value so $ is needed for two way binding, tells swift to read and write value automatically
     @State
-    private var tapCount = 0
+    private var name = ""
     
     var body: some View {
-        Button("Tap Count: \(tapCount) ") {
-            tapCount += 1
+        Form {
+            TextField("Enter your name", text: $name)
+            Text("Hello, \(name)!")
         }
     
     }
