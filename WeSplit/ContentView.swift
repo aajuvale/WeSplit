@@ -10,16 +10,22 @@ import SwiftUI
 struct ContentView: View {
     
     // SwiftUI needs to be able to read and write value so $ is needed for two way binding, tells swift to read and write value automatically
+    
+    let students = ["Scott", "Kurt", "Logan"]
     @State
-    private var name = ""
+    private var selectedStudent = "Logan"
     
     var body: some View {
-        Form {
-            ForEach(0..<100) {
-                number in Text("Row \(number)")
+        NavigationStack {
+            Form {
+                Picker("Select your Student: ", selection: $selectedStudent){
+                    ForEach(students, id: \.self){
+                        Text($0)
+                    }
+                }
             }
+            .navigationTitle("Select a Student")
         }
-    
     }
 }
 
