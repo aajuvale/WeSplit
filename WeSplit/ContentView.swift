@@ -16,6 +16,8 @@ struct ContentView: View {
     private var selectedStudent = "Logan"
     
     var body: some View {
+        
+        // WeSplit 7/11
         NavigationStack {
             Form {
                 Picker("Select your Student: ", selection: $selectedStudent){
